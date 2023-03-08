@@ -1,14 +1,15 @@
 const {ethers, run, network} = require("hardhat"); 
-// now all that set, we will look into how much gas each one of our fn costs
-// npm hardhat-gas-reporter ->it is a hardhat plugin which attaches itself to the tests and shows in the console how much each fn costs
-// config file me require karo
+// so everytime we do the deploy command, ek network is created and the script khatam hone pe, the network is reset, how can we make it do something that outlives the script?
+// just run npx hardhat node -> will run a local network other than hardhat
+// localhost pe chal raha ye network, so if we add a localhost network in config and then use the deploy command in another console using that network while our node(npx hardhat node) is running, we will see the logs in the node console
 
-// another hardhat plugin that could come very useful to use is the solidity coverage
-// this helps in preventing hacks, this plugin goes through our solidity code and the tests, and tells us which lines in solidity are not covered under the tests
-// npm -> solidity-coverage
-//config file me add karo isko bhi
+// apan npx hardhat console bhi kar sakte hai, usse we get a running shell then we can interact with our contract
+// usme contractfamily se deploy karna hoga
+// first contractfamily, then then .deploy(), then run any functions like get and set
 
-
+// now we move on to writing tests
+// we can write in solidity and js, js is majorly used, so we use js
+// mocha framework is use to write tests
 async function main() {
     const StorageFactory = await ethers.getContractFactory("SimpleStorage");
     console.log("deploying")

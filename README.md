@@ -11,3 +11,4 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
+deploy.js is the current file and deploy0.js to deployn.js is the prev notes till now
