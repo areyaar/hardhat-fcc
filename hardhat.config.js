@@ -1,6 +1,8 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
+require("@nomiclabs/hardhat-etherscan"); // ye sara kaam karega apna for verification, bas api key laake dedo ise etherscan se
 // network me kuch nahi hai toh automatically wo hardhat ke network pe deploy kar raha hai
+// we get a task called verify in npx hardhat ^^ iske karan
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   defaultNetwork: "hardhat", // kuch nahi tha fir specify kia network hardhat, still will work the same but humne specify kar dia
@@ -11,5 +13,8 @@ module.exports = {
       chainId: 5
     }
   }, // iske andar koi bhi network dal do to use
+  etherscan:{
+    apiKey: process.env.ETHERSCAN_API_KEY // configured the programmatic verification here
+  },
   solidity: "0.8.18",
 };
