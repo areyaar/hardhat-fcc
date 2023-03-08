@@ -4,6 +4,11 @@ require("@nomiclabs/hardhat-etherscan"); // ye sara kaam karega apna for verific
 // network me kuch nahi hai toh automatically wo hardhat ke network pe deploy kar raha hai
 // we get a task called verify in npx hardhat ^^ iske karan
 /** @type import('hardhat/config').HardhatUserConfig */
+
+//importing tasks
+require("./tasks/block-number");
+
+
 module.exports = {
   defaultNetwork: "hardhat", // kuch nahi tha fir specify kia network hardhat, still will work the same but humne specify kar dia
   networks:{
